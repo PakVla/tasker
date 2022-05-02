@@ -30,7 +30,7 @@ public class AuthorizationController {
     public ResponseEntity authorization(@RequestBody String jsonString){
         try{
             HashMap jsonData = JsonReformat.toHashMap(jsonString);
-            return ResponseEntity.ok(User.toModel(userService.authorization((String) jsonData.get("login"), (String) jsonData.get("password"))));
+            return ResponseEntity.ok(User.toModel(userService.authorization((String) jsonData.get("login"), (String) jsonData.get("password"))).getId());
         } catch (UserNotFoundException | UserWrongPasswordException | JsonProcessingException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }

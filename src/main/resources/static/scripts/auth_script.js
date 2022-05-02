@@ -16,7 +16,8 @@ $(document).on('submit', function(e) {
                 dataType: 'text',
                 async: true,
                 success: function(data) {
-                    alert(data);
+                    $.cookie('userId', data);
+                    window.location.href = '/';
                 },
                 error: function(jqXHR) {
                     $('#div_none').show();

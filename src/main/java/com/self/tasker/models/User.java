@@ -1,11 +1,6 @@
 package com.self.tasker.models;
 
 import com.self.tasker.entity.UserEntity;
-import com.sun.istack.NotNull;
-import org.springframework.scheduling.config.Task;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class User {
 
@@ -14,8 +9,6 @@ public class User {
     private String lastName;
     private String firstName;
     private String patronymic;
-    private List<Task> tasks;
-    private List<Comment> comments;
 
     public User() {
     }
@@ -70,19 +63,4 @@ public class User {
         this.patronymic = patronymic;
     }
 
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
-
-    public List<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
 }

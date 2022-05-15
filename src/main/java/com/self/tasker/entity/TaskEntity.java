@@ -3,6 +3,7 @@ package com.self.tasker.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -19,13 +20,13 @@ public class TaskEntity {
     @JoinColumn(name = "comment_id")
     private List<CommentEntity> comments;
 
-    private String idUsersExecutors;
+    private Long idUserExecutor;
     private String idSubTasks;
     @NotNull
     private String text;
     @NotNull
-    private String dateTimeCreate;
-    private String dateTimeEnd;
+    private Date dateCreate;
+    private Date dateEnd;
     private Boolean completed;
 
     public TaskEntity() {
@@ -47,12 +48,12 @@ public class TaskEntity {
         this.userCreator = userCreator;
     }
 
-    public String getIdUsersExecutors() {
-        return idUsersExecutors;
+    public Long getIdUserExecutor() {
+        return idUserExecutor;
     }
 
-    public void setIdUsersExecutors(String idUsersExecutors) {
-        this.idUsersExecutors = idUsersExecutors;
+    public void setIdUserExecutor(Long idUserExecutor) {
+        this.idUserExecutor = idUserExecutor;
     }
 
     public String getIdSubTasks() {
@@ -71,20 +72,20 @@ public class TaskEntity {
         this.text = text;
     }
 
-    public String getDateTimeCreate() {
-        return dateTimeCreate;
+    public Date getDateCreate() {
+        return dateCreate;
     }
 
-    public void setDateTimeCreate(String dateTimeCreate) {
-        this.dateTimeCreate = dateTimeCreate;
+    public void setDateCreate(Date dateCreate) {
+        this.dateCreate = dateCreate;
     }
 
-    public String getDateTimeEnd() {
-        return dateTimeEnd;
+    public Date getDateEnd() {
+        return dateEnd;
     }
 
-    public void setDateTimeEnd(String dateTimeEnd) {
-        this.dateTimeEnd = dateTimeEnd;
+    public void setDateEnd(Date dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
     public Boolean getCompleted() {

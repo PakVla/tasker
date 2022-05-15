@@ -25,7 +25,7 @@ public class RegistrationController {
     @PostMapping("/reg")
     public ResponseEntity registration(@RequestBody String jsonString) throws JsonProcessingException, UserAlreadyExsistsException {
         try{
-            return ResponseEntity.ok(userService.registration(JsonReformat.toUserEntity(jsonString)));
+            return ResponseEntity.ok(userService.registration(JsonReformat.toUserEntity(jsonString)).getId());
         } catch (UserAlreadyExsistsException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

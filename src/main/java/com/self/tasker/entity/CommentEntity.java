@@ -3,7 +3,7 @@ package com.self.tasker.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 @Entity
 public class CommentEntity {
@@ -21,7 +21,7 @@ public class CommentEntity {
     @NotNull
     private String commentText;
     @NotNull
-    private String dateTime;
+    private Date date;
 
 
     public CommentEntity() {
@@ -59,11 +59,11 @@ public class CommentEntity {
         this.commentText = commentText;
     }
 
-    public String getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

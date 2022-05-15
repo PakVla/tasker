@@ -34,9 +34,35 @@
       </a>
 
       <ul id="sidebar" class="nav nav-pills col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li class="nav-item"><a class="header-nav-item nav-link px-2 link-dark mb-2 mt-2 active">Открытые задачи</a></li>
-        <li class="nav-item"><a class="header-nav-item nav-link px-2 link-dark mb-2 mt-2">Закрытые задачи</a></li>
-        <li class="nav-item"><a class="header-nav-item nav-link px-2 link-dark mb-2 mt-2">Новая задача</a></li>
+
+        <li class="nav-item dropdown mb-2 mt-2">
+          <a class="nav-link dropdown-toggle link-dark header-nav-item active" href="" id="allTasks" data-bs-toggle="dropdown" aria-expanded="false">Все задачи</a>
+          <ul class="dropdown-menu" aria-labelledby="allTasks">
+            <li><a class="dropdown-item header-nav-subitem" href="#">Открытые задачи</a></li>
+            <li><a class="dropdown-item header-nav-subitem" href="#">Закрытые задачи</a></li>
+            <li><a class="dropdown-item header-nav-subitem" href="#">Все задачи</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown mb-2 mt-2">
+          <a class="nav-link dropdown-toggle link-dark header-nav-item" href="#" id="assignedForMe" data-bs-toggle="dropdown" aria-expanded="false">Назначены мне</a>
+          <ul class="dropdown-menu" aria-labelledby="assignedForMe">
+            <li><a class="dropdown-item header-nav-subitem" href="#">Открытые задачи</a></li>
+            <li><a class="dropdown-item header-nav-subitem" href="#">Закрытые задачи</a></li>
+            <li><a class="dropdown-item header-nav-subitem" href="#">Все задачи</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown mb-2 mt-2">
+          <a class="nav-link dropdown-toggle link-dark header-nav-item" href="#" id="createdByMe" data-bs-toggle="dropdown" aria-expanded="false">Созданы мной</a>
+          <ul class="dropdown-menu" aria-labelledby="createdByMe">
+            <li><a class="dropdown-item header-nav-subitem" href="#">Открытые задачи</a></li>
+            <li><a class="dropdown-item header-nav-subitem" href="#">Закрыттые задачи</a></li>
+            <li><a class="dropdown-item header-nav-subitem" href="#">Все задачи</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a href="#" class="header-nav-item nav-link px-2 link-dark mb-2 mt-2">Новая задача</a></li>
       </ul>
 
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -44,21 +70,25 @@
       </form>
 
       <div class="dropdown text-end">
-        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle show" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="true">
-          User
-        </a>
-        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser" wfd-invisible="true" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 34px);">
-          <li><a class="dropdown-item" href="/">Профиль</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" id="outBtn" href="/auth">Выход</a></li>
-        </ul>
+
+        <a class="nav-link dropdown-toggle link-dark" href="#" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">User</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownUser">
+            <li><a class="dropdown-item" href="#">Профиль</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Выход</a></li>
+          </ul>
+
       </div>
+
     </div>
   </div>
 </header>
 <body>
+
+  <div class="position-absolute mt-2 start-50 translate-middle">
+    <h1 class="h4  fw-normal" id="typeLabel">Все задачи</h1>
+  </div>
   <div id="openClose" class="container data-placeholder"></div>
 
-  <div id="new"class="container data-placeholder"></div>
 </body>
 </html>
